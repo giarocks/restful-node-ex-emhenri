@@ -18,7 +18,7 @@ const routes = (app) => {
     //     })
     .get((req, resp, next) => {
         //middleware  
-        console.log(req);
+        //console.log(req);
         console.log(`request from ${req.originalUrl}`);
         console.log(`req type ${req.method}`);
         next();
