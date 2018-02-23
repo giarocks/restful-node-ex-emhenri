@@ -1,11 +1,14 @@
 // import express from "express";
 // import mongoose from "mongoose";
 // import bodyParser from "body-parser";
+// import routes from "./src/routes/demoRoute"
+
 var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
+var routes = require("./src/routes/demoRoute");
+
 //allows to send obj/data thru our DB via http POST
-import routes from "./src/routes/demoRoute"
 
 const app = express();
 const PORT = 3001;
