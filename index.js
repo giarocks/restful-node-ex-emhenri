@@ -1,3 +1,4 @@
+/*
 // import express from "express";
 // import mongoose from "mongoose";
 // import bodyParser from "body-parser";
@@ -6,7 +7,6 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
-var routes = require("./src/routes/demoRoute");
 
 //allows to send obj/data thru our DB via http POST
 
@@ -42,6 +42,43 @@ var db = mongoose.connection;
 app.use(bodyParser.urlencoded({extended:true}))
 //setup json to work when u do the post request
 app.use(bodyParser.json());
+
+var routes = require("./src/routes/demoRoute");
+routes(app);
+
+//serving static files
+app.use(express.static('public'));
+
+
+app.get('/',(req,resp)=>
+resp.send(`Node and Express server are running on ${PORT}`)
+)
+
+app.listen(PORT, ()=>
+    console.log(`Your server is running on ${PORT}`)
+)
+*/
+var express = require('express'),
+app = express(),
+port = 3001,
+bodyParser = require('body-parser'),
+mongoose = require('mongoose');
+mongoose.set('debug', true);
+
+// mongoose instance connection url connection
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://giarocksfab:giarocksfab@ds145438.mlab.com:45438/restful-node-ex-emhenri');
+var db = mongoose.connection;
+
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function callback () {
+  console.log("connection sucess");
+});
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+var routes = require('./src/routes/demoRoute');
 routes(app);
 
 //serving static files

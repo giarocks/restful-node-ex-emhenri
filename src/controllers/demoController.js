@@ -1,5 +1,7 @@
-import mongoose from 'mongoose';
-import {ContactSchema} from "../models/demoModel"
+//import mongoose from 'mongoose';
+//import {ContactSchema} from "../models/demoModel"
+var mongoose = require('mongoose');
+var {ContactSchema} = require('../models/demoModel');
 
 const Contact = mongoose.model('Contact', ContactSchema);
 
