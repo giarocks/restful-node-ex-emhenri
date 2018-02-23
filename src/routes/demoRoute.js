@@ -1,14 +1,14 @@
-/*import {addNewContact, 
+import {addNewContact, 
     getContacts, 
     getContactWithID, 
     updateContact,
 deleteContact } from "../controllers/demoController";
-*/
-var {addNewContact, 
-    getContacts, 
-    getContactWithID, 
-    updateContact,
-deleteContact } = require('../controllers/demoController');
+
+// var {addNewContact, 
+//     getContacts, 
+//     getContactWithID, 
+//     updateContact,
+// deleteContact } = require('../controllers/demoController');
 
 
 const routes = (app) => {

@@ -1,12 +1,7 @@
-/*
-// import express from "express";
-// import mongoose from "mongoose";
-// import bodyParser from "body-parser";
-// import routes from "./src/routes/demoRoute"
-
-var express = require('express');
-var mongoose = require('mongoose');
-var bodyParser = require('body-parser');
+import express from "express";
+import mongoose from "mongoose";
+import bodyParser from "body-parser";
+import routes from "./src/routes/demoRoute"
 
 //allows to send obj/data thru our DB via http POST
 
@@ -43,7 +38,7 @@ app.use(bodyParser.urlencoded({extended:true}))
 //setup json to work when u do the post request
 app.use(bodyParser.json());
 
-var routes = require("./src/routes/demoRoute");
+//var routes = require("./src/routes/demoRoute");
 routes(app);
 
 //serving static files
@@ -57,7 +52,8 @@ resp.send(`Node and Express server are running on ${PORT}`)
 app.listen(PORT, ()=>
     console.log(`Your server is running on ${PORT}`)
 )
-*/
+
+/*
 var express = require('express'),
 app = express(),
 port = 3001,
@@ -92,3 +88,4 @@ resp.send(`Node and Express server are running on ${PORT}`)
 app.listen(PORT, ()=>
     console.log(`Your server is running on ${PORT}`)
 )
+*/
